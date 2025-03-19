@@ -1,0 +1,26 @@
+#categoriesPage {
+  overflow: auto;
+  height: 100%;
+  flex-grow: 1;
+
+  .productCard {
+    background-color: white;
+    transition: 400ms ease all;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    &:hover {
+      background-color: var(--mainYellow);
+    }
+    img {
+      height: 200px;
+      width: 100%;
+      object-fit: contain;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
