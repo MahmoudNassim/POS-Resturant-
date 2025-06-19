@@ -1,14 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import NavHeader from "../../components/NavHeader/NavHeader";
-import { useCategories } from "../../store";
+import { domain, useCategories } from "../../store";
 import styles from "./Categories.module.css";
+
 export default function Categories() {
-  const { data: appCategories, setActiveId } = useCategories();
+  const { setActiveId, data: appCategories } = useCategories();
+
   const navigate = useNavigate();
-  const openCategory = (path, cat_id) => {
-    setActiveId(cat_id);
-    navigate(path);
+  const openCategory = (documentId) => {
+    setActiveId(documentId);
+    navigate(documentId);
   };
+
   return (
     <div className="" id={styles.categoriesPage}>
       <NavHeader tabName={"Categories"} />
@@ -17,15 +20,15 @@ export default function Categories() {
           <div
             key={el.documentId}
             className="col-10 col-md-6 col-lg-4 p-2"
-            onClick={() => openCategory(el.path, el.documentId)}
+            onClick={() => openCategory(el.documentId)}
           >
             <div
               className={
                 styles.productCard + " shadow rounded border col-12 p-3"
               }
             >
-              <img src={el.imgUrl} alt="" />
-              <p>{el.name}</p>
+              <img src={domain + el.category_img.url} alt="" />
+              <p>{el.category_name}</p>
             </div>
           </div>
         ))}

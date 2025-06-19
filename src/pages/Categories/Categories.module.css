@@ -15,7 +15,7 @@
       background-color: var(--mainYellow);
     }
     img {
-      height: 200px;
+      height: 150px;
       width: 100%;
       object-fit: contain;
     }

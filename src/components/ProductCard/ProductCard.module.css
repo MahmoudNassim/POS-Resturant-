@@ -1,0 +1,13 @@
+.card {
+  transition: 400ms ease all;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+  }
+  &:hover {
+    background-color: var(--mainYellow);
+  }
+}
