@@ -52,6 +52,7 @@ export default function CategoryProducts() {
                   name={el.product_name}
                   price={el.product_price}
                   imgUrl={domain + el.product_img.url}
+                  product={el}
                   key={el.documentId}
                 />
               );

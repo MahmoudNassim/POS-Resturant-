@@ -4,8 +4,9 @@ import Dashboard from "./pages/Dashboard/Dashboard.jsx";
 import SideMenue from "./components/SideMenue/SideMenue.jsx";
 import CategoryProducts from "./pages/CategoryProducts/CategoryProducts.jsx";
 import Categories from "./pages/Categories/Categories.jsx";
-import { domain, useCategories } from "./store/index.jsx";
+import { domain, useCart, useCategories } from "./store/index.jsx";
 import axios from "axios";
+import SideCart from "./components/SideCart/SideCart.jsx";
 
 export default function App() {
   const { setData } = useCategories();
@@ -16,6 +17,7 @@ export default function App() {
     "/settings",
     "/bills",
   ]);
+  const { cartIndex } = useCart();
 
   const [path, setPath] = useState();
   const location = useLocation();
@@ -43,6 +45,8 @@ export default function App() {
 
   return (
     <div className="App col-12 d-flex">
+      {cartIndex && <SideCart />}
+
       {acceptedRoutes.includes(path) && <SideMenue />}
       <Routes>
         <Route path="/" element={<Dashboard />} />
