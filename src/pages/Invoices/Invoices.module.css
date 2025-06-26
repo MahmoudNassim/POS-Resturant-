@@ -1,0 +1,13 @@
+#invoicesPage {
+  flex-grow: 1;
+  height: 100vh;
+  overflow: auto;
+
+  #invoiceCard {
+    cursor: pointer;
+    transition: 400ms ease-out all;
+    &:hover {
+      background-color: var(--mainYellow) !important;
+    }
+  }
+}

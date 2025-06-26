@@ -12,6 +12,7 @@ export default function SideMenue() {
   const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState(0);
+
   const [links] = useState([
     { id: 1, name: "Dashboard", icon: <MdDashboard />, path: "/" },
     {
@@ -22,9 +23,9 @@ export default function SideMenue() {
     },
     {
       id: 3,
-      name: "Bills",
+      name: "Invoices",
       icon: <HiDocumentCurrencyDollar />,
-      path: "/bills",
+      path: "/invoices",
     },
     { id: 4, name: "Settings", icon: <VscSettings />, path: "/settings" },
   ]);

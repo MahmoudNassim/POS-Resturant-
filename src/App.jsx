@@ -7,6 +7,7 @@ import Categories from "./pages/Categories/Categories.jsx";
 import { domain, useCart, useCategories } from "./store/index.jsx";
 import axios from "axios";
 import SideCart from "./components/SideCart/SideCart.jsx";
+import Invoices from "./pages/Invoices/Invoices.jsx";
 
 export default function App() {
   const { setData } = useCategories();
@@ -15,7 +16,7 @@ export default function App() {
     "/",
     "/orders",
     "/settings",
-    "/bills",
+    "/invoices",
   ]);
   const { cartIndex } = useCart();
 
@@ -51,7 +52,7 @@ export default function App() {
         <Route path="/orders" element={<Categories />} />
         <Route path="/orders/:id" element={<CategoryProducts />} />
         <Route path="/settings" element={<h1>Settings</h1>} />
-        <Route path="/bills" element={<h1>Bills</h1>} />
+        <Route path="/invoices" element={<Invoices />} />
         <Route path="/login" element={<h1>Login</h1>} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>

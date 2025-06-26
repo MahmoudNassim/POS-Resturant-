@@ -1,3 +1,4 @@
+import { act } from "react";
 import { create } from "zustand";
 
 export const domain = "http://localhost:1337";
@@ -56,4 +57,20 @@ export const useCart = create((set) => ({
       return { productsInCart: copy };
     }),
   resetCart: () => set(() => ({ productsInCart: [] })),
+}));
+
+export const useInvoiceDetails = create((set) => ({
+  index: false,
+  activeInvoiceId: null,
+  openDetails: () => set(() => ({ index: true })),
+  closeDetails: () => set(() => ({ index: false })),
+
+  setActiveId: (id) =>
+    set(() => ({
+      activeInvoiceId: id,
+    })),
+  resetActiveId: () =>
+    set(() => ({
+      activeInvoiceId: null,
+    })),
 }));
