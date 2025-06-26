@@ -26,7 +26,6 @@ export default function CategoryProducts() {
         },
       })
       .then((res) => {
-        console.log(res.data.data);
         setCategoryInfo(res.data.data);
         setCheck(true);
       })

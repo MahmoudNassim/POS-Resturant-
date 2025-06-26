@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { useCart } from "../../store";
+import { domain, useCart } from "../../store";
 import styles from "./CheckOut.module.css";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function CheckOut() {
-  const { closeCheckOut, productsInCart } = useCart();
+  const { closeCheckOut, productsInCart, resetCart, closeCart } = useCart();
   const handleClose = (e) => {
     e.stopPropagation();
     closeCheckOut();
@@ -23,6 +25,54 @@ export default function CheckOut() {
       (acc, el) => acc + el.qty * el.product_price,
       0
     );
+  };
+  const createNewInvoice = (total) => {
+    let data = {
+      invoice_total: total,
+      pos_user: {
+        connect: "xnv7m2zbkyngeqtas0uos2rp",
+      },
+    };
+    axios
+      .post(domain + "/api/invoices", {
+        data: data,
+      })
+      .then((res) => {
+        let newInvoiceId = res.data.data.documentId;
+        createRecords(newInvoiceId);
+      });
+  };
+
+  const createRecords = (invoiceId) => {
+    productsInCart.forEach((el) => {
+      let data = {
+        product_qty: el.qty,
+        invoice: {
+          connect: [invoiceId],
+        },
+        product: {
+          connect: [el.documentId],
+        },
+      };
+      axios
+        .post(domain + "/api/invoices-details", { data: data })
+        .then((res) => {});
+    });
+
+    Swal.fire({
+      icon: "success",
+      title: "Invoice Successfully Saved !",
+      timer: 1500,
+    }).then(() => {
+      closeCheckOut();
+      resetCart();
+      closeCart();
+    });
+  };
+
+  const saveInvoice = () => {
+    let total = getTotal();
+    createNewInvoice(total);
   };
   return (
     <div className={styles.overlay} onClick={handleClose}>
@@ -47,6 +97,7 @@ export default function CheckOut() {
         </h4>
         <h4>Remain : {remain}</h4>
         <button
+          onClick={saveInvoice}
           className="btn btn-primary col-12"
           disabled={remain < 0 ? true : false}
         >

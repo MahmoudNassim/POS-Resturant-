@@ -23,7 +23,6 @@ export default function App() {
   const location = useLocation();
   useEffect(() => {
     setPath(location.pathname);
-    console.log(location.pathname);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -35,7 +34,6 @@ export default function App() {
       })
       .then((res) => {
         let cats = res.data.data;
-        console.log(cats);
         let routes = cats.map((el) => "/orders/" + el.documentId);
         let newArr = [...acceptedRoutes, ...routes];
         setAcceptedRoutes(newArr);
