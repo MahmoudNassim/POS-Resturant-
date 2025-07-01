@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { domain, useCart } from "../../store";
 import styles from "./CheckOut.module.css";
 import axios from "axios";
@@ -28,11 +28,12 @@ export default function CheckOut() {
     );
   };
   const createNewInvoice = (total) => {
+    let user_id = JSON.parse(sessionStorage.getItem("userInfo")).user_id;
     let data = {
       invoice_date: moment().format("YYYY-MM-DD"),
       invoice_total: total,
       pos_user: {
-        connect: "xnv7m2zbkyngeqtas0uos2rp",
+        connect: [user_id],
       },
     };
     axios

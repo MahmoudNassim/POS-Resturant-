@@ -8,6 +8,7 @@ import { domain, useCart, useCategories } from "./store/index.jsx";
 import axios from "axios";
 import SideCart from "./components/SideCart/SideCart.jsx";
 import Invoices from "./pages/Invoices/Invoices.jsx";
+import LoginPage from "./pages/Login/LoginPage.jsx";
 
 export default function App() {
   const { setData } = useCategories();
@@ -53,7 +54,7 @@ export default function App() {
         <Route path="/orders/:id" element={<CategoryProducts />} />
         <Route path="/settings" element={<h1>Settings</h1>} />
         <Route path="/invoices" element={<Invoices />} />
-        <Route path="/login" element={<h1>Login</h1>} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./SideMenue.module.css";
 import { PiCashRegisterDuotone } from "react-icons/pi";
 import { MdDashboard } from "react-icons/md";
@@ -7,11 +7,15 @@ import { FaBurger } from "react-icons/fa6";
 import { VscSettings } from "react-icons/vsc";
 import { Link, useNavigate } from "react-router-dom";
 import { FaCircleUser } from "react-icons/fa6";
+import { domain } from "../../store";
+import axios from "axios";
 
 export default function SideMenue() {
   const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState(0);
+
+  const [userInfo, setUserInfo] = useState({});
 
   const [links] = useState([
     { id: 1, name: "Dashboard", icon: <MdDashboard />, path: "/" },
@@ -31,8 +35,30 @@ export default function SideMenue() {
   ]);
 
   let handleLogout = () => {
+    sessionStorage.clear();
     navigate("/login");
   };
+
+  useEffect(() => {
+    let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
+    if (userInfo) {
+      let user_id = userInfo.user_id;
+      let url = domain + `/api/pos-users/${user_id}`;
+      axios
+        .get(url)
+        .then(() => {
+          setUserInfo(userInfo);
+        })
+        .catch(() => {
+          sessionStorage.clear();
+          navigate("/login");
+        });
+    } else {
+      sessionStorage.clear();
+      navigate("/login");
+    }
+  }, []);
+
   return (
     <div
       className=" d-flex flex-column px-3 border-end justify-content-between pb-5  "
@@ -64,10 +90,10 @@ export default function SideMenue() {
       </div>
 
       <div className="col-12 d-flex flex-column align-items-center gap-2 ">
-        <FaCircleUser className="fs-4" />
+        <FaCircleUser className="fs-3" />
         {/* <img src="" alt="" /> */}
-        <h4>UserName</h4>
-        <p>userRole</p>
+        <h4>{userInfo.user_name}</h4>
+        <p>{userInfo.user_role}</p>
         <button onClick={handleLogout} className="btn btn-primary">
           LogOut
         </button>

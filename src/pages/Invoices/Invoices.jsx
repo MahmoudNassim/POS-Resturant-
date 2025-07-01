@@ -13,6 +13,9 @@ export default function Invoices() {
   const { index, openDetails, setActiveId } = useInvoiceDetails();
 
   const getInvoices = (date) => {
+    let userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
+    let user_id = userInfo.user_id;
+
     if (!date) {
       date = moment().format("YYYY-MM-DD");
     }
@@ -21,9 +24,20 @@ export default function Invoices() {
         params: {
           populate: "*",
           filters: {
-            invoice_date: {
-              $eq: date,
-            },
+            $and: [
+              {
+                invoice_date: {
+                  $eq: date,
+                },
+              },
+              {
+                pos_user: {
+                  documentId: {
+                    $eq: user_id,
+                  },
+                },
+              },
+            ],
           },
         },
       })
@@ -66,7 +80,12 @@ export default function Invoices() {
             >
               <div className={styles.left}>
                 <h2>Order #{el.id}</h2>
-                <span>{el.pos_user.user_name}</span>
+                <span>
+                  Processed by:{" "}
+                  <span className="fw-bold text-black fs-5 ">
+                    {el.pos_user.user_name}
+                  </span>{" "}
+                </span>
               </div>
               <div className={styles.right}>
                 <h3>${el.invoice_total}</h3>
