@@ -1,4 +1,5 @@
 #overlay {
+  z-index: 1050;
   #content {
     width: 600px;
     height: 100vh;
@@ -7,5 +8,51 @@
     position: fixed;
     right: 0;
     top: 0;
+
+    .productCard {
+      transition: 0.3s ease all;
+
+      .productInfo {
+        img {
+          width: 90px;
+          height: 90px;
+          object-fit: cover;
+          border-radius: 8px;
+          border: 2px solid var(--mainYellow);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+          font-size: 1.4rem;
+          font-weight: 700;
+          color: #222;
+          margin: 0;
+        }
+      }
+
+      .totalPrice {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+      }
+
+      .rightSection {
+        text-align: right;
+
+        h3 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: #555;
+          margin: 0;
+        }
+
+        .pricePerItem {
+          font-size: 1.1rem;
+          font-weight: 500;
+          color: #27ae60;
+        }
+      }
+    }
   }
 }

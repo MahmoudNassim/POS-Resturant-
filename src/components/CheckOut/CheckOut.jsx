@@ -3,6 +3,7 @@ import { domain, useCart } from "../../store";
 import styles from "./CheckOut.module.css";
 import axios from "axios";
 import Swal from "sweetalert2";
+import moment from "moment";
 
 export default function CheckOut() {
   const { closeCheckOut, productsInCart, resetCart, closeCart } = useCart();
@@ -12,7 +13,7 @@ export default function CheckOut() {
   };
 
   const [customerAmount, setCustomerAmount] = useState("");
-  const [remain, setRemain] = useState();
+  const [remain, setRemain] = useState(-1);
 
   const handleChange = (e) => {
     const value = +e.target.value;
@@ -28,6 +29,7 @@ export default function CheckOut() {
   };
   const createNewInvoice = (total) => {
     let data = {
+      invoice_date: moment().format("YYYY-MM-DD"),
       invoice_total: total,
       pos_user: {
         connect: "xnv7m2zbkyngeqtas0uos2rp",

@@ -2,12 +2,45 @@
   flex-grow: 1;
   height: 100vh;
   overflow: auto;
-
-  #invoiceCard {
+  .invoiceCard {
     cursor: pointer;
-    transition: 400ms ease-out all;
+    transition: 0.3s ease all;
+    min-height: 140px;
+
     &:hover {
-      background-color: var(--mainYellow) !important;
+      background-color: var(--mainYellow, #ffc107) !important;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .left {
+      h2 {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #1a1a1a;
+      }
+
+      span {
+        font-size: 1rem;
+        color: #666;
+      }
+    }
+
+    .right {
+      text-align: right;
+
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #27ae60 !important;
+        margin-bottom: 0.3rem;
+      }
+
+      span {
+        font-size: 0.9rem;
+        color: #888;
+      }
     }
   }
 }
