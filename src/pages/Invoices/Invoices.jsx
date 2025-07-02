@@ -71,26 +71,35 @@ export default function Invoices() {
         {invoices &&
           invoices.map((el) => (
             <div
-              key={el.id}
               onClick={() => {
                 openDetails();
                 setActiveId(el.documentId);
               }}
-              className={`col-12 col-md-6 col-lg-4 rounded-4 border p-4 mb-3 shadow-sm bg-white d-flex align-items-center justify-content-between ${styles.invoiceCard}`}
+              key={el.id}
+              className={`col-12 col-md-6 col-lg-4 d-flex flex-column  rounded-4 border  mb-3 shadow-sm bg-white ${styles.invoiceCard}`}
             >
-              <div className={styles.left}>
-                <h2>Order #{el.id}</h2>
-                <span>
-                  Processed by:{" "}
-                  <span className="fw-bold text-black fs-5 ">
-                    {el.pos_user.user_name}
-                  </span>{" "}
-                </span>
+              <div className="p-4 d-flex align-items-center justify-content-between">
+                <div className={styles.left}>
+                  <h2>Order #{el.id}</h2>
+                  <span>
+                    Processed by: <br />
+                    <span className="fw-bold text-black fs-5 ">
+                      {el.pos_user.user_name}
+                    </span>{" "}
+                  </span>
+                </div>
+                <div className={`d-flex flex-column  gap-3 ${styles.right}`}>
+                  <span className="bg-primary text-white p-2 rounded-pill">
+                    {el.createdAt.slice(11, 16)}
+                  </span>
+                  <h3>
+                    {" "}
+                    <span>Total: </span> <br /> {el.invoice_total} $
+                  </h3>
+                </div>
               </div>
-              <div className={styles.right}>
-                <h3>${el.invoice_total}</h3>
-                <span>{el.createdAt.slice(11, 16)}</span>
-              </div>
+              <hr />
+              <p className="text-center fs-3">Click to view details </p>
             </div>
           ))}
       </div>

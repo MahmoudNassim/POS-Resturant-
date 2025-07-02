@@ -1,7 +1,7 @@
 import styles from "./NavHeader.module.css";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { FaAngleRight } from "react-icons/fa6";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCart, useCategories } from "../../store";
 import { FaShoppingCart } from "react-icons/fa";
 
@@ -11,30 +11,45 @@ export default function NavHeader({ tabName }) {
   const { openCart, productsInCart } = useCart();
 
   return (
-    <header className="col-12 d-flex p-4 gap-4 align-items-center justify-content-between">
-      <div className="d-flex align-items-center gap-4 col-6">
-        {active_cat_id != 0 && (
-          <IoIosArrowRoundBack
-            className={styles.backBtn}
-            onClick={() => {
-              navigate("/orders");
-            }}
-          />
-        )}
-        <div className="d-flex align-items-center gap-2">
-          <Link to={"/orders"} className="nav-link">
-            <p className="m-0 fs-4">Food & Drinks</p>
-          </Link>
-          <FaAngleRight />
-          <p className="m-0 fs-4">{tabName}</p>
-        </div>
+    <nav className="bg-white">
+      <div className="container">
+        <header className="d-flex py-3 justify-content-between align-items-center">
+          <div className="d-flex align-items-center">
+            {active_cat_id != 0 && (
+              <button
+                className={`btn btn-light rounded-circle me-3 ${styles.backBtn}`}
+                onClick={() => navigate("/orders")}
+                aria-label="Go back"
+              >
+                <IoIosArrowRoundBack size={22} />
+              </button>
+            )}
+
+            <div className="d-flex align-items-center">
+              <span className="text-muted">Food & Drinks</span>
+              <FaAngleRight className="mx-1 text-muted" />
+              <h5 className="mb-0 fw-bold">{tabName}</h5>
+            </div>
+          </div>
+
+          <div className="position-relative ">
+            <button
+              className="btn btn-light rounded-circle position-relative"
+              onClick={openCart}
+              aria-label="Shopping cart"
+            >
+              <FaShoppingCart className={styles.cartIcon} size={18} />
+
+              {productsInCart && (
+                <p className="position-absolute  top-0 start-100 translate-middle badge rounded-pill bg-primary">
+                  {productsInCart.reduce((acc, el) => acc + el.qty, 0)}
+                  <span className="visually-hidden">items in cart</span>
+                </p>
+              )}
+            </button>
+          </div>
+        </header>
       </div>
-      <div className="d-flex align-items-center gap-2 col-6 justify-content-center">
-        <FaShoppingCart onClick={openCart} id={styles.cart} />
-        <span className="bg-primary p-2 rounded-circle">
-          {productsInCart.reduce((acc, el) => acc + el.qty, 0)}
-        </span>
-      </div>
-    </header>
+    </nav>
   );
 }
