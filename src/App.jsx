@@ -9,6 +9,7 @@ import axios from "axios";
 import SideCart from "./components/SideCart/SideCart.jsx";
 import Invoices from "./pages/Invoices/Invoices.jsx";
 import LoginPage from "./pages/Login/LoginPage.jsx";
+import SettingsPage from "./pages/Settings/SettingsPage.jsx";
 
 export default function App() {
   const { setData } = useCategories();
@@ -52,7 +53,7 @@ export default function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/orders" element={<Categories />} />
         <Route path="/orders/:id" element={<CategoryProducts />} />
-        <Route path="/settings" element={<h1>Settings</h1>} />
+        <Route path="/settings" element={<SettingsPage />} />
         <Route path="/invoices" element={<Invoices />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
