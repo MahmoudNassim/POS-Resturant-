@@ -18,7 +18,7 @@ export default function SideMenue() {
   const [userInfo, setUserInfo] = useState({});
 
   const [links] = useState([
-    { id: 1, name: "Dashboard", icon: <MdDashboard />, path: "/" },
+    // { id: 1, name: "Dashboard", icon: <MdDashboard />, path: "/" },
     {
       id: 2,
       name: "Food and Drinks",

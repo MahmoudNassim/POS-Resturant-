@@ -50,7 +50,7 @@ export default function App() {
 
       {acceptedRoutes.includes(path) && <SideMenue />}
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        {/* <Route path="/" element={<Dashboard />} /> */}
         <Route path="/orders" element={<Categories />} />
         <Route path="/orders/:id" element={<CategoryProducts />} />
         <Route path="/settings" element={<SettingsPage />} />

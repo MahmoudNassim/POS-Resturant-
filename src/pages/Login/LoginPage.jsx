@@ -48,7 +48,7 @@ export default function LoginPage() {
             text: "Login Success",
             timer: 1500,
           }).then(() => {
-            navigate("/");
+            navigate("/orders");
           });
         } else {
           Swal.fire({
