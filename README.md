@@ -23,7 +23,7 @@ A full-featured POS (Point of Sale) system built with **React** & **Bootstrap** 
 <img width="1600" height="815" alt="image" src="https://github.com/user-attachments/assets/4992848c-4c3e-4a17-ac4d-c9c30da187e4" />
 <img width="1600" height="820" alt="image" src="https://github.com/user-attachments/assets/a7e6653a-5b79-4fcb-8079-763d72153f4e" />
 <img width="1600" height="777" alt="image" src="https://github.com/user-attachments/assets/ccd29e71-4059-4aa0-951b-c531baa07a22" />
-<img width="1595" height="814" alt="image" src="https://github.com/user-attachments/assets/c0371a2c-ae8f-404f-b889-cd3b99727517" />
+<img width="1600" height="815" alt="image" src="https://github.com/user-attachments/assets/31d143f5-d500-4647-925d-1333552dc4f8" />
 
 
 
