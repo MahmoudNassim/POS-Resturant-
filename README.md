@@ -17,6 +17,7 @@ A full-featured POS (Point of Sale) system built with **React** & **Bootstrap** 
 - **API:** RESTful API
 
 ## 📷 Screenshots
+<img width="1600" height="777" alt="image" src="https://github.com/user-attachments/assets/f530975a-3fb4-4ae3-96c0-9406640d84f3" />
 
 ## ⚙️ Installation & Setup
 ```bash
