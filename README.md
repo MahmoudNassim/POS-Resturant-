@@ -18,7 +18,7 @@ A full-featured POS (Point of Sale) system built with **React** & **Bootstrap** 
 
 ## 📷 Screenshots
 
-[📂 Google Drive]([https://drive.google.com/drive/folders/1KGU--8ugpfHW906QWNbDPErkm0wCPtnK](https://drive.google.com/file/d/1SXjGOrs0FTWKBOEWfH8bQUfgjPcAS29G/view?usp=sharing))
+[📂 Google Drive](https://drive.google.com/file/d/1SXjGOrs0FTWKBOEWfH8bQUfgjPcAS29G/view?usp=sharing)
 
 
 ## ⚙️ Installation & Setup
