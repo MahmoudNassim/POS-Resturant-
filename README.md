@@ -1,12 +1,31 @@
-# React + Vite
+# 🛒 POS | Point of Sale Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-featured POS (Point of Sale) system built with **React** & **Bootstrap** for the frontend and **Strapi** for the backend and admin dashboard.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- 🔐 **User Authentication** – Secure login system to control access.
+- 📦 **Product Listing** – Browse and search products with add-to-cart functionality.
+- 🛍 **Shopping Cart** – Add, remove, and manage items easily.
+- 🧾 **Sales Invoices** – Generate and print invoices in real-time.
+- 📅 **Date-based Filtering** – View and filter past invoices by date.
+- 🔄 **Persistent Data** – All data stored and synced with Strapi using REST APIs.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
+- **Frontend:** React, Bootstrap
+- **Backend:** Strapi (Headless CMS)
+- **Database:** SQLite / PostgreSQL (depending on Strapi config)
+- **API:** RESTful API
 
-## Expanding the ESLint configuration
+## 📷 Screenshots
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Installation & Setup
+```bash
+# 1️⃣ Clone the repo
+git clone https://github.com/MahmoudNassim/POS-Resturant-.git
+
+# 2️⃣ Install dependencies
+cd POS-Resturant-
+npm install
+
+# 3️⃣ Run the development server
+npm run dev
