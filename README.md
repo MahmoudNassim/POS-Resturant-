@@ -17,15 +17,22 @@ A full-featured POS (Point of Sale) system built with **React** & **Bootstrap** 
 - **API:** RESTful API
 
 ## 📷 Screenshots
-<img width="1600" height="818" alt="image" src="https://github.com/user-attachments/assets/05da69e5-61f4-4500-b4ce-9968de3d41d1" />
-<img width="1600" height="818" alt="image" src="https://github.com/user-attachments/assets/1c88526e-85dc-4d6e-84fe-d0137df63a2e" />
-<img width="1598" height="811" alt="image" src="https://github.com/user-attachments/assets/191a5ffb-5adf-436a-8c9e-60feed61a3d1" />
-<img width="1600" height="815" alt="image" src="https://github.com/user-attachments/assets/4992848c-4c3e-4a17-ac4d-c9c30da187e4" />
-<img width="1600" height="820" alt="image" src="https://github.com/user-attachments/assets/a7e6653a-5b79-4fcb-8079-763d72153f4e" />
-<img width="1600" height="777" alt="image" src="https://github.com/user-attachments/assets/ccd29e71-4059-4aa0-951b-c531baa07a22" />
-<img width="1600" height="815" alt="image" src="https://github.com/user-attachments/assets/31d143f5-d500-4647-925d-1333552dc4f8" />
 
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/05da69e5-61f4-4500-b4ce-9968de3d41d1" width="45%" />
+  <img src="https://github.com/user-attachments/assets/1c88526e-85dc-4d6e-84fe-d0137df63a2e" width="45%" />
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/191a5ffb-5adf-436a-8c9e-60feed61a3d1" width="45%" />
+  <img src="https://github.com/user-attachments/assets/4992848c-4c3e-4a17-ac4d-c9c30da187e4" width="45%" />
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a7e6653a-5b79-4fcb-8079-763d72153f4e" width="45%" />
+  <img src="https://github.com/user-attachments/assets/ccd29e71-4059-4aa0-951b-c531baa07a22" width="45%" />
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/31d143f5-d500-4647-925d-1333552dc4f8" width="45%" />
+</p>
 
 ## ⚙️ Installation & Setup
 ```bash
