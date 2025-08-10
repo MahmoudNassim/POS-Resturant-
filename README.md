@@ -13,7 +13,6 @@ A full-featured POS (Point of Sale) system built with **React** & **Bootstrap** 
 ## 🛠 Tech Stack
 - **Frontend:** React, Bootstrap
 - **Backend:** Strapi (Headless CMS)
-- **Database:** SQLite / PostgreSQL (depending on Strapi config)
 - **API:** RESTful API
 
 ## 📷 Screenshots
