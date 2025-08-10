@@ -15,7 +15,7 @@ A full-featured POS (Point of Sale) system built with **React** & **Bootstrap** 
 - **Backend:** Strapi (Headless CMS)
 - **API:** RESTful API
 
-## 📷 Screenrecord
+## 📷 ScreenRecord
 
 [📂 Google Drive](https://drive.google.com/file/d/1SXjGOrs0FTWKBOEWfH8bQUfgjPcAS29G/view?usp=sharing)
 
